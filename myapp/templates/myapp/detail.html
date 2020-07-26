@@ -1,0 +1,17 @@
+{% extends 'myapp/base.html' %}
+{% block body_block %}
+{% if topic %}
+    <h2>Category of Topic: </h2>
+    <h5>{{topic_category}}</h5>
+        <h2>List of courses for the topic: {{ topic.name }}</h2>
+        <ol>
+        {% for course  in courses_of_topic %}
+            <li> <a href="/myapp/coursedetail/{{ course.pk }}">{{ course.name}}</a> </li>
+        {% endfor %}
+        </ol>
+{% else %}
+    <strong>The topic you are looking for is not available</strong>
+{% endif %}
+
+<!--<p><a href="{% url 'myapp:index'%}">Go to Index Page !!</a></p>-->
+{% endblock %}

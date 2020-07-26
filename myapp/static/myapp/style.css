@@ -1,0 +1,16 @@
+h1{
+    background-color: Blue;
+    color: white;
+    font-size: large;
+    font-style: italic;
+    position: center;
+}
+
+.hbar1 {
+ display: inline;
+ margin: 15px;
+}
+
+div {
+    background-color: greenyellow;
+}

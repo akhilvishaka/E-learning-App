@@ -1,0 +1,18 @@
+{% extends 'myapp/base.html' %}
+{% block body_block %}
+       {% if courlist %}
+        <h2>List of Courses</h2>
+            <ol>
+            {% for course in courlist %}
+            <li> {{ course.name}}{{ '   ' }}{{ course.price }}</li>
+            {% endfor %}
+            </ol>
+           <form action="/myapp/place_order/" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="place order" />
+            </form>
+    {% else %}
+         <strong>There are no available courses!</strong>
+    {% endif %}
+{% endblock %}

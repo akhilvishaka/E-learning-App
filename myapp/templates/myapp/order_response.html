@@ -1,0 +1,7 @@
+{% extends 'myapp/base.html' %}
+{% block body_block %}
+       {% if msg %}
+       <p>{{ msg }}</p>
+       <p>you have got a discount of {{ discount }}</p>
+    {% endif %}
+{% endblock %}
